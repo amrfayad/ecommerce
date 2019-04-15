@@ -19,8 +19,8 @@ class CreatePurchasesTable extends Migration
             $table->timestamps();
         });
         Schema::table('purchases', function (Blueprint $table) {
-            $table->biginteger('user_id')->unsigned();
-            $table->biginteger('product_id')->unsigned();
+            $table->biginteger('user_id')->unsigned()->nullable();;
+            $table->biginteger('product_id')->unsigned()->nullable();;
             $table->foreign('user_id')
                   ->references('id')
                   ->on('users')
